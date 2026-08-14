@@ -68,10 +68,14 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
+    xwayland-satellite
     kitty
     alacritty
     firefox
+    kdePackages.kate
+    github-desktop
+    gh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -81,6 +85,15 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
+  security.rtkit.enable = true;
+
+
   programs.niri.enable = true;
 
   services.greetd = {
