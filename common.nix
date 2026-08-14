@@ -52,6 +52,7 @@
     yazi
     nautilus
     eza
+    btop
   ];
 
 
@@ -77,7 +78,13 @@
   };
   systemd.user.services.niri.enableDefaultPath = false;
 
-  programs.fish.enable = true;
+
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set -g fish_greeting
+    '';
+  };
 
   programs.neovim = {
     enable = true;

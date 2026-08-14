@@ -17,21 +17,31 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      # ll = "ls -la";
+      ls = "eza --icons --group-directories-first -lh";
+      la = "eza --icons --group-directories-first -lha";
+      rebuild = "sudo nixos-rebuild switch --flake /home/duffy/nixos-config#pc";
+      y = "yazi";
+    };
+
+    interactiveShellInit = ''
+      set -g fish_greeting
+    '';
+  };
+
+  programs.starship = {
+    enable = true;
+    # Configuration written to ~/.config/starship.toml
+    settings = {
+      add_newline = false;
+
+      character = {
+        success_symbol = "[>](bold green)";
+        error_symbol = "[>](bold red)";
+      };
+
+      package.disabled = true;
     };
   };
-/*
-  programs.kitty = {
-    enable = true;
-    settings = {
-      # font_family = "JetBrains Mono";
-      # font_size = "11.0";
-      confirm_os_window_close = 0;
-    };
-    # or, if you'd rather keep your existing kitty.conf as-is:
-    # extraConfig = builtins.readFile ./dotfiles/kitty.conf;
-  };*/
-
 
   home.pointerCursor = {
     enable = true;
@@ -42,12 +52,26 @@
     size = 16;
   };
 
+  gtk = {
+    enable = true;
+    iconTheme = {
+      package = pkgs.tela-icon-theme;
+      name = "Tela-dark";
+    };
+  };
+
+  home.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    nerd-fonts.hack
+    nerd-fonts.iosevka
+  ];
+
+  fonts.fontconfig.enable = true;
+
+
   programs.dank-material-shell = {
     enable = true;
-#     niri.enableSpawn = true;
-    # check `nix flake show github:AvengeMedia/DankMaterialShell`
-    # or the repo's README for the actual option names/defaults —
-    # they're still evolving, worth confirming against current docs.
   };
 
   programs.zen-browser = {
