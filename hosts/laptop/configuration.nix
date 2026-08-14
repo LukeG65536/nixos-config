@@ -10,6 +10,8 @@
     SUBSYSTEM=="input", ATTRS{name}=="ELAN9008:00 04F3:2C8C Stylus", ENV{LIBINPUT_IGNORE_DEVICE}="1"
   '';
 
+  services.gnome.gnome-keyring.enable = true;
+
 
   hardware.graphics = {
     enable = true;
