@@ -13,13 +13,14 @@
 
   # Let home-manager manage itself
   programs.home-manager.enable = true;
+  
+
 
   programs.fish = {
     enable = true;
     shellAliases = {
       ls = "eza --icons --group-directories-first -lh";
       la = "eza --icons --group-directories-first -lha";
-      rebuild = "sudo nixos-rebuild switch --flake /home/duffy/nixos-config#pc";
       y = "yazi";
     };
 

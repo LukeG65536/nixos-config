@@ -20,4 +20,8 @@
   environment.systemPackages = with pkgs; [
     lolcat
   ];
+
+  programs.fish.shellAliases = {
+    rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config/#laptop";
+  };
 }
