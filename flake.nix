@@ -20,20 +20,23 @@
   };
 
   outputs = { self, nixpkgs, home-manager, dankMaterialShell, zen-browser, ... }@inputs: {
-    nixosConfigurations.duffy = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.backupFileExtension = "backup";
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.users.duffy = ./home.nix;
-        }
-      ];
+    nixosConfigurations = {
+      pc = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./common.nix
+          ./hosts/pc/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.backupFileExtension = "backup";
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.duffy = ./home.nix;
+          }
+        ];
+      };
     };
   };
 }
