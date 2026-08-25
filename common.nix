@@ -54,8 +54,37 @@
     eza
     btop
     obsidian
+    spotify
+    pyright
+    clang-tools   # provides clangd
+    ruff
+    vesktop
+    darktable
+    feh
+    mpv
+    uv
+    wl-clipboard
+    tealdeer
+    libinput
+    python3Packages.python-lsp-server
   ];
 
+  services.locate.enable = true;
+  services.locate.package = pkgs.mlocate; # or pkgs.plocate
+
+  
+  environment.localBinInPath = true;
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc.lib
+    zlib
+    openssl
+    libffi
+    glibc
+    curl        
+    icu         
+    ncurses     
+  ];
 
   services.pipewire = {
     enable = true;
@@ -64,12 +93,26 @@
   };
 
   services.syncthing = {
-    enable = true;
+    enable = false;
     openDefaultPorts = true; # Open ports in the firewall for Syncthing. (NOTE: this will not open syncthing gui port)
+    user = "duffy"; 
+    group = "users";
+    dataDir = "/home/duffy"; 
+    configDir = "/home/duffy/.config/syncthing";
+  };
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
   };
 
 
   security.rtkit.enable = true;
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+  security.polkit.enable = true;
+
 
 
   programs.niri.enable = true;
@@ -79,7 +122,7 @@
     settings = {
       default_session = {
         command = "${config.programs.niri.package}/bin/niri-session";
-	user = "duffy";
+       	user = "duffy";
       };
     };
   };
@@ -93,10 +136,6 @@
     '';
   };
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
 
   system.stateVersion = "26.05";
 }

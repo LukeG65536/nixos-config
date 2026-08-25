@@ -14,6 +14,18 @@
   # Let home-manager manage itself
   programs.home-manager.enable = true;
   
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
+    settings = {
+      theme = "catppuccin_mocha";
+      editor.line-number = "relative";
+    };
+    extraPackages = with pkgs; [
+      bash-language-server   # Provides autocomplete, diagnostics, and hover details
+      shellcheck             # Optional: Provides excellent bash linting/error checking
+    ];
+  };
 
 
   programs.fish = {
@@ -21,7 +33,7 @@
     shellAliases = {
       ls = "eza --icons --group-directories-first -lh";
       la = "eza --icons --group-directories-first -lha";
-      y = "yazi";
+      feh = "feh --auto-zoom --scale-down";
     };
 
     interactiveShellInit = ''
@@ -42,6 +54,14 @@
 
       package.disabled = true;
     };
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+    options = [
+      "--cmd cd" # Replaces the standard 'cd' command with zoxide
+    ];
   };
 
   home.pointerCursor = {
