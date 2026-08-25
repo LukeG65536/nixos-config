@@ -16,13 +16,6 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
-
-
-  services.logind = {
-    lidSwitch = "ignore";
-    lidSwitchExternalPower = "ignore";
-  };
-
   services.keyd = {
     enable = true;
     keyboards.default = {
