@@ -33,11 +33,14 @@
       editor.line-number = "relative";
     };
     extraPackages = with pkgs; [
-      bash-language-server   # Provides autocomplete, diagnostics, and hover details
-      shellcheck             # Optional: Provides excellent bash linting/error checking
+      bash-language-server
+      shellcheck
+      clang-tools
+      cudaPackages.cudatoolkit
+      cudaPackages.cuda_cudart
+      cudaPackages.cuda_nvcc
     ];
   };
-
 
   programs.fish = {
     enable = true;
