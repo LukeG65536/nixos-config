@@ -67,7 +67,17 @@
     tealdeer
     libinput
     python3Packages.python-lsp-server
+    imagemagick
   ];
+
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "com.github.tchx84.Flatseal"
+      "org.gnome.gitlab.YaLTeR.Identity"
+      "org.vinegarhq.Sober"
+    ];
+  };
 
   services.locate.enable = true;
   services.locate.package = pkgs.mlocate; # or pkgs.plocate

@@ -17,9 +17,14 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, dankMaterialShell, zen-browser, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, dankMaterialShell, zen-browser, nix-flatpak, ... }@inputs: {
     nixosConfigurations = {
       pc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -27,6 +32,7 @@
         modules = [
           ./common.nix
           ./hosts/pc/configuration.nix
+          nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager
           {
             home-manager.backupFileExtension = "backup";
@@ -44,6 +50,7 @@
         modules = [
           ./common.nix
           ./hosts/laptop/configuration.nix
+          nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager
           {
             home-manager.backupFileExtension = "backup";

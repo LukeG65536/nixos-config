@@ -9,6 +9,9 @@
   services.udev.extraRules = ''
     SUBSYSTEM=="input", ATTRS{name}=="ELAN9008:00 04F3:2C8C Stylus", ENV{LIBINPUT_IGNORE_DEVICE}="1"
   '';
+
+  services.upower.enable = true;
+
   hardware.nvidia.powerManagement.enable = true;
   services.power-profiles-daemon.enable = true;
 
