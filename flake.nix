@@ -61,5 +61,20 @@
         ];
       };
     };
+    homeConfigurations = {
+      isengard = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          ./home/cli.nix
+          { nixpkgs.config.allowUnfree = true; }
+          {
+            home.username = "luke_gottschall";
+            home.homeDirectory = "/home/m10960618";
+            home.stateVersion = "25.05";
+          }
+        ];
+      };
+    };
   };
 }
