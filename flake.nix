@@ -38,7 +38,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.duffy = ./home.nix;
+            home-manager.users.duffy = ./home/default.nix;
           }
         ];
       };
@@ -56,7 +56,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.duffy = ./home.nix;
+            home-manager.users.duffy = ./home/default.nix;
           }
         ];
       };

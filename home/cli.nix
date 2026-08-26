@@ -1,18 +1,29 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports = [
-    inputs.dankMaterialShell.homeModules.dank-material-shell
-    inputs.zen-browser.homeModules.beta
-  ];
 
-  home.username = "duffy";
-  home.homeDirectory = "/home/duffy";
 
-  home.stateVersion = "25.05";
 
   # Let home-manager manage itself
   programs.home-manager.enable = true;
+  
+  home.pkgs = with pkgs; [
+    git
+    vim
+    fastfetch
+    gh
+    yazi
+    eza
+    btop
+    pyright
+    clang-tools   # provides clangd
+    ruff
+    uv
+    tealdeer
+    python3Packages.python-lsp-server
+    imagemagick
+  ];
+
   
   programs.helix = {
     enable = true;
@@ -63,41 +74,5 @@
     options = [
       "--cmd cd" # Replaces the standard 'cd' command with zoxide
     ];
-  };
-
-  home.pointerCursor = {
-    enable = true;
-    gtk.enable = true;
-    x11.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 16;
-  };
-
-  gtk = {
-    enable = true;
-    iconTheme = {
-      package = pkgs.tela-icon-theme;
-      name = "Tela-dark";
-    };
-  };
-
-  home.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.fira-code
-    nerd-fonts.hack
-    nerd-fonts.iosevka
-  ];
-
-  fonts.fontconfig.enable = true;
-
-
-  programs.dank-material-shell = {
-    enable = true;
-  };
-
-  programs.zen-browser = {
-    enable = true;
-    setAsDefaultBrowser = true;
   };
 }
