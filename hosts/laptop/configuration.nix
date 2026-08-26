@@ -67,5 +67,6 @@
 
   programs.fish.shellAliases = {
     re = "sudo nixos-rebuild switch --flake ~/nixos-config/#laptop";
+    gre = "cd ~/nixos-config; git add -A; git commit -m auto; git push; sudo nixos-rebuild switch --flake ~/nixos-config/#laptop"; 
   };
 }
