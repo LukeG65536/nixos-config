@@ -7,7 +7,7 @@
   # Let home-manager manage itself
   programs.home-manager.enable = true;
   
-  home.pkgs = with pkgs; [
+  home.packages = with pkgs; [
     git
     vim
     fastfetch

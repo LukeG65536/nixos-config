@@ -9,11 +9,12 @@
 
   home.username = "duffy";
   home.homeDirectory = "/home/duffy";
+  home.stateVersion = "25.05";
 
   
   programs.home-manager.enable = true;
   
-  home.pkgs = with pkgs; [
+  home.packages = with pkgs; [
     xwayland-satellite
     kitty
     alacritty
@@ -29,6 +30,10 @@
     mpv
     wl-clipboard
     libinput    
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    nerd-fonts.hack
+    nerd-fonts.iosevka
   ];
 
   
@@ -46,7 +51,6 @@
       "org.vinegarhq.Sober"
     ];
 
-    update.auto.onActivation = true; 
   };
   
   home.pointerCursor = {
@@ -66,12 +70,6 @@
     };
   };
 
-  home.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.fira-code
-    nerd-fonts.hack
-    nerd-fonts.iosevka
-  ];
 
   fonts.fontconfig.enable = true;
 
