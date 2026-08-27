@@ -34,6 +34,7 @@
     nerd-fonts.fira-code
     nerd-fonts.hack
     nerd-fonts.iosevka
+    gimp
   ];
 
   
