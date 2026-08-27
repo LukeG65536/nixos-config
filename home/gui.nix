@@ -52,6 +52,7 @@
     ];
 
   };
+
   
   home.pointerCursor = {
     enable = true;
