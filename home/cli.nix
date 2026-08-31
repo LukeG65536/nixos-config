@@ -49,7 +49,7 @@
       la = "eza --icons --group-directories-first -lha";
       lt = "eza -lT -L 3 --icons --group --group-directories-first";
       feh = "feh --auto-zoom --scale-down";
-      ... = "cd ../..";
+      "..." = "cd ../..";
     };
 
     interactiveShellInit = ''
