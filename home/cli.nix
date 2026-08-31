@@ -22,6 +22,8 @@
     tealdeer
     python3Packages.python-lsp-server
     imagemagick
+    zip
+    unzip
   ];
 
   
