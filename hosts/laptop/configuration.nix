@@ -72,6 +72,16 @@
     enable = true;
     enable32Bit = true;
   };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    # open = false; # Set to true if using open-source kernel modules on supported cards
+    # package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+  
   zramSwap.enable = true;
 
   boot.loader.systemd-boot.enable = true;
