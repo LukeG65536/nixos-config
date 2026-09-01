@@ -10,6 +10,8 @@
   services.udev.extraRules = ''
     SUBSYSTEM=="input", ATTRS{name}=="ELAN9008:00 04F3:2C8C", ENV{LIBINPUT_IGNORE_DEVICE}="1"
   '';
+
+  hardware.wooting.enable = true;
   
 
   services.upower.enable = true;
@@ -64,6 +66,7 @@
   environment.systemPackages = with pkgs; [
     lolcat
     kdePackages.filelight
+    wootility
   ];
 
 
