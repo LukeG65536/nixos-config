@@ -6,6 +6,12 @@
 
   # Let home-manager manage itself
   programs.home-manager.enable = true;
+
+
+  # imports = [ inputs.yazelix.homeManagerModules.default ];
+
+  # programs.yazelix.enable = true;
+
   
   home.packages = with pkgs; [
     git
@@ -26,6 +32,8 @@
     unzip
   ];
 
+
+
   
   programs.helix = {
     enable = true;
@@ -33,7 +41,17 @@
     settings = {
       theme = "catppuccin_mocha";
       editor.line-number = "relative";
+      keys.normal = {
+        C-y = [
+          '':sh rm -f /tmp/unique-file''
+          '':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-file''
+          '':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty''
+          '':open %sh{cat /tmp/unique-file}''
+          '':redraw''
+        ];
+      };
     };
+    
     extraPackages = with pkgs; [
       bash-language-server
       shellcheck

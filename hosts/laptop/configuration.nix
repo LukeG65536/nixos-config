@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
 
@@ -10,6 +10,8 @@
   services.udev.extraRules = ''
     SUBSYSTEM=="input", ATTRS{name}=="ELAN9008:00 04F3:2C8C", ENV{LIBINPUT_IGNORE_DEVICE}="1"
   '';
+
+  
 
   hardware.wooting.enable = true;
   
@@ -35,6 +37,12 @@
     };
   };
 
+  services.logind.settings.Login = {
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
+    HandleLidSwitchDocked = "ignore";
+  };
+
   environment.etc."libinput/local-overrides.quirks".text = ''
     [keyd virtual keyboard]
     MatchUdevType=keyboard
@@ -49,6 +57,14 @@
   services.gnome.gnome-keyring.enable = true;
 
   virtualisation.docker.enable = true;
+
+  systemd.services.docker = {
+    after = lib.mkForce [ "firewalld.service" "containerd.service" "time-set.target" ];
+    wants = lib.mkForce [ "containerd.service" ];
+  };
+
+  systemd.services."NetworkManager-wait-online".enable = false;
+  
   services.tailscale.enable = true;
   users.users.duffy.extraGroups = [ "docker" ];
 

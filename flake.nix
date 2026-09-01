@@ -21,9 +21,14 @@
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak";
     };
+
+    yazelix = {
+      url = "github:Yazelix/nova/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, dankMaterialShell, zen-browser, nix-flatpak, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, dankMaterialShell, zen-browser, nix-flatpak, yazelix, ... }@inputs: {
     nixosConfigurations = {
       pc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
