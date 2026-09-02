@@ -95,6 +95,7 @@
     wootility
   ];
 
+  services.flatpak.enable = true;
 
   programs.fish.shellAliases = {
     re = "sudo nixos-rebuild switch --flake ~/nixos-config/#laptop";
