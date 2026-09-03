@@ -35,6 +35,7 @@
     nerd-fonts.hack
     nerd-fonts.iosevka
     gimp
+    prusa-slicer
   ];
 
   

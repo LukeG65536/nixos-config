@@ -42,7 +42,24 @@
     defaultEditor = true;
     settings = {
       theme = "catppuccin_mocha";
-      editor.line-number = "relative";
+      editor = {
+        line-number = "relative";
+        end-of-line-diagnostics = "hint";
+        cursor-shape = {
+          insert = "bar";
+          select = "underline";
+        };
+        lsp = {
+          display-messages = true;
+        };
+        inline-diagnostics = {
+          cursor-line = "error";
+          other-lines = "disable";
+        };
+        indent-guides = {
+          render = true;
+        };
+      };
       keys.normal = {
         C-y = [
           '':sh rm -f /tmp/unique-file''
@@ -52,6 +69,7 @@
           '':redraw''
         ];
       };
+
     };
     
     extraPackages = with pkgs; [
