@@ -33,6 +33,7 @@
     tree
     nushell
     dgop
+    nvd
   ];
 
 
