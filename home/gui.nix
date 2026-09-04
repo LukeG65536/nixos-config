@@ -88,7 +88,7 @@
     niri = {
       enableKeybinds = true;
       enableSpawn = true;
-    }
+    };
   };
 
   programs.zen-browser = {
