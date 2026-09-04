@@ -106,6 +106,6 @@
 
   programs.fish.shellAliases = {
     re = "sudo nixos-rebuild switch --flake ~/nixos-config/#laptop";
-    gre = "cd ~/nixos-config; git add -A; git commit -m \"auto commit gen \"(readlink /nix/var/nix/profiles/system | cut -d- -f2); git push; sudo nixos-rebuild switch --flake ~/nixos-config/#laptop"; 
+    gre = "cd ~/nixos-config; git add -A; git commit -m \"auto commit gen \"(sudo nix-env --list-generations --profile /nix/var/nix/profiles/system | tail -1 | awk '{print $1}'); git push; sudo nixos-rebuild switch --flake ~/nixos-config/#laptop"; 
   };
 }
