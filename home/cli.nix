@@ -32,6 +32,7 @@
     unzip
     tree
     nushell
+    dgop
   ];
 
 
