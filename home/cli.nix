@@ -34,6 +34,7 @@
     nushell
     dgop
     nvd
+    gcc
   ];
 
 
