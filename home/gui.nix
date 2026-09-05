@@ -36,6 +36,7 @@
     nerd-fonts.iosevka
     gimp
     prusa-slicer
+    vscode
   ];
 
   
@@ -84,11 +85,6 @@
 
   programs.dank-material-shell = {
     enable = true;
-
-    niri = {
-      enableKeybinds = true;
-      enableSpawn = true;
-    };
   };
 
   programs.zen-browser = {
