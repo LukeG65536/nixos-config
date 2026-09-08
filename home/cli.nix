@@ -8,9 +8,9 @@
   programs.home-manager.enable = true;
 
 
-  imports = [ inputs.yazelix.homeManagerModules.default ];
+  # imports = [ inputs.yazelix.homeManagerModules.default ];
 
-  programs.yazelix.enable = true;
+  # programs.yazelix.enable = true;
 
   
   home.packages = with pkgs; [

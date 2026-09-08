@@ -105,7 +105,7 @@
   services.flatpak.enable = true;
 
   programs.fish.shellAliases = {
-    re = "nh os switch -H laptop";
+    re = "nh os switch --update -H laptop";
     gre = "cd ~/nixos-config; git add -A; git commit -m \"auto commit gen \"(sudo nix-env --list-generations --profile /nix/var/nix/profiles/system | tail -1 | awk '{print $1}'); git push; nh os switch -H laptop"; 
   };
 }
