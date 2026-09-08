@@ -37,6 +37,7 @@
     gimp
     prusa-slicer
     vscode
+    slack
   ];
 
   
