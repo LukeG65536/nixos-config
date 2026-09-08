@@ -85,9 +85,9 @@
       bash-language-server
       shellcheck
       clang-tools
-      cudaPackages.cudatoolkit
-      cudaPackages.cuda_cudart
-      cudaPackages.cuda_nvcc
+      # cudaPackages.cudatoolkit
+      # cudaPackages.cuda_cudart
+      # cudaPackages.cuda_nvcc
     ];
   };
 
