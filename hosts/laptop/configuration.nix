@@ -12,6 +12,18 @@
   '';
 
   
+  environment.systemPackages = with pkgs; [
+    lolcat
+    kdePackages.filelight
+    wootility
+  ];
+
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["duffy"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+  
+  services.flatpak.enable = true;
 
   hardware.wooting.enable = true;
   
@@ -96,13 +108,6 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  environment.systemPackages = with pkgs; [
-    lolcat
-    kdePackages.filelight
-    wootility
-  ];
-
-  services.flatpak.enable = true;
 
   programs.fish.shellAliases = {
     re = "nh os switch --update -H laptop";
