@@ -26,6 +26,7 @@
   services.flatpak.enable = true;
 
   hardware.wooting.enable = true;
+  hardware.opentabletdriver.enable = true;
   
 
   services.upower.enable = true;
