@@ -35,6 +35,7 @@
     dgop
     nvd
     gcc
+    duf
   ];
 
 
