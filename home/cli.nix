@@ -36,6 +36,7 @@
     nvd
     gcc
     duf
+    file
   ];
 
 
