@@ -24,6 +24,8 @@
   virtualisation.spiceUSBRedirection.enable = true;
   
   services.flatpak.enable = true;
+  programs.appimage.enable = true;
+  programs.appimage.binfmt = true;
 
   hardware.wooting.enable = true;
   hardware.opentabletdriver.enable = true;
