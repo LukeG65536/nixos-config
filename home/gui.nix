@@ -78,6 +78,12 @@
       name = "Bibata-Modern-Ice";
       size = 16;
     };
+    gtk3.extraConfig = {
+      "gtk-decoration-layout" = ":none";
+    };
+    gtk4.extraConfig = {
+      "gtk-decoration-layout" = ":none";
+    };
   };
 
 
