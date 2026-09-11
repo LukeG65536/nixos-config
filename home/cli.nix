@@ -102,7 +102,7 @@
       lt = "eza -lT -L 3 --icons --group --group-directories-first";
       feh = "feh --auto-zoom --scale-down";
       "..." = "cd ../..";
-      egrep = "egrep --color"
+      egrep = "egrep --color";
     };
 
     interactiveShellInit = ''
