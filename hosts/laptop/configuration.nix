@@ -16,6 +16,8 @@
     lolcat
     kdePackages.filelight
     wootility
+    asusctl
+    supergfxctl
   ];
 
   programs.virt-manager.enable = true;
