@@ -35,6 +35,14 @@
 
   services.upower.enable = true;
 
+  services.asusd = {
+    enable = true;
+    # enableUserService = true; # Highly recommended for ROG Control Center features
+  };
+
+  services.supergfxd.enable = true;
+
+
   hardware.nvidia.powerManagement.enable = true;
   services.power-profiles-daemon.enable = true;
 
