@@ -38,6 +38,7 @@
     duf
     file
     bindfs
+    xhost
   ];
 
 
