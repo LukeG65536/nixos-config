@@ -17,10 +17,7 @@
 
   home.file.".config/niri".source =
     config.lib.file.mkOutOfStoreSymlink
-      "${config.home.homeDirectory}/nixos-config/dotfiles/niri";
-
-  home.file.".config/feh".source = "../dotfiles/feh";
-  
+      "${config.home.homeDirectory}/nixos-config/dotfiles/niri";  
   
   programs.home-manager.enable = true;
   
@@ -107,5 +104,24 @@
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
+  };
+
+  programs.feh = {
+    enable = true;
+  
+    buttons = {
+      prev_img = null;
+      next_img = null;
+    
+      zoom_in = 4;
+      zoom_out = 5;
+    };
+  
+    themes = {
+      feh = [
+        "--auto-zoom"
+        "--scale-down"
+      ];
+    };
   };
 }
