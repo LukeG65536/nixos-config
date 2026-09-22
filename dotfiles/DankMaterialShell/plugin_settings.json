@@ -1,0 +1,19 @@
+{
+  "dankPomodoroTimer": {
+    "enabled": true
+  },
+  "dankObsidian": {
+    "enabled": false,
+    "isFlatpak": false
+  },
+  "dankAsusControlCenter": {
+    "enabled": true
+  },
+  "nixPackageRunner": {
+    "enabled": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  }
+}

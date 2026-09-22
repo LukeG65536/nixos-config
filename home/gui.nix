@@ -11,6 +11,9 @@
   home.homeDirectory = "/home/duffy";
   home.stateVersion = "25.05";
 
+  home.file.".config/DankMaterialShell".source = ../dotfiles/DankMaterialShell;
+  home.file.".config/niri".source = ../dotfiles/niri;
+
   
   programs.home-manager.enable = true;
   

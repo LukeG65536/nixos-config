@@ -1,0 +1,26 @@
+{
+  "lockfileVersion": 1,
+  "plugins": {
+    "calculator": {
+      "repo": "https://github.com/rochacbruno/DankCalculator",
+      "commit": "1db5865419a40a33171a475855a59e0b8bf7187f"
+    },
+    "dankAsusControlCenter": {
+      "repo": "https://github.com/shazzaam7/DankAsusControl",
+      "commit": "06548f4d09ce97b9db050f89aff8468fa893c246"
+    },
+    "dankObsidian": {
+      "repo": "https://github.com/Samoggino/dankObsidian",
+      "commit": "a31c335d2ba83921fdc105ab3128d5cf3ca3d8cc"
+    },
+    "dankPomodoroTimer": {
+      "repo": "https://github.com/AvengeMedia/dms-plugins",
+      "path": "DankPomodoroTimer",
+      "commit": "bb90a1db7d540e64ae049c5906afba9b24baa865"
+    },
+    "nixPackageRunner": {
+      "repo": "https://github.com/iahccc/NixPackageRunner",
+      "commit": "829ad93c15b7c0ec82a6d7483728029037442601"
+    }
+  }
+}
