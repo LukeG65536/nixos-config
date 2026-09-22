@@ -13,11 +13,11 @@
 
   home.file.".config/DankMaterialShell".source =
     config.lib.file.mkOutOfStoreSymlink
-      "${config.home.homeDirectory}/path/to/dotfiles/DankMaterialShell";
+      "${config.home.homeDirectory}/home/duffy/nixos-config/dotfiles/DankMaterialShell";
 
   home.file.".config/niri".source =
     config.lib.file.mkOutOfStoreSymlink
-      "${config.home.homeDirectory}/path/to/dotfiles/niri";
+      "${config.home.homeDirectory}/home/duffy/nixos-config/dotfiles/niri";
   
   programs.home-manager.enable = true;
   
