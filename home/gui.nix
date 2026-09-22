@@ -11,9 +11,13 @@
   home.homeDirectory = "/home/duffy";
   home.stateVersion = "25.05";
 
-  home.file.".config/DankMaterialShell".source = ../dotfiles/DankMaterialShell;
-  home.file.".config/niri".source = ../dotfiles/niri;
+  home.file.".config/DankMaterialShell".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/path/to/dotfiles/DankMaterialShell";
 
+  home.file.".config/niri".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/path/to/dotfiles/niri";
   
   programs.home-manager.enable = true;
   
