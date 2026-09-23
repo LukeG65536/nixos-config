@@ -65,6 +65,24 @@
           }
         ];
       };
+
+      live-env = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./common.nix
+          ./hosts/live-env/configuration.nix
+          nix-flatpak.nixosModules.nix-flatpak
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.backupFileExtension = "backup";
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.duffy = ./home/default.nix;
+          }
+        ];
+      };
     };
     homeConfigurations = {
       isengard = home-manager.lib.homeManagerConfiguration {

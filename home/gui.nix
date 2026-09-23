@@ -121,6 +121,7 @@
       feh = [
         "--auto-zoom"
         "--scale-down"
+        "-F"
       ];
     };
   };
