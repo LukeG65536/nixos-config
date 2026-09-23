@@ -5,7 +5,7 @@
   environment.systemPackages = with pkgs; [
     lolcat
     kdePackages.filelight
-    partition-manager
+    kdePackages.partitionmanager
     gparted
   ];
 
