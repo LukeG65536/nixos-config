@@ -16,6 +16,8 @@
     lolcat
     wootility
     openrgb
+    clinfo
+    rocmPackages.rocminfo
   ];
   
   services.tailscale.enable = true;
@@ -31,10 +33,6 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [
-    clinfo
-    rocmPackages.rocminfo
-  ];
 
   users.users.duffy.extraGroups = [ "video" "render" ];
 
