@@ -97,6 +97,15 @@
   "spotlightSectionViewModes": {
     "apps": "list"
   },
+  "dashOptions": {
+    "media": {
+      "deviceName": false,
+      "waveProgress": false
+    },
+    "weather": {
+      "city": true
+    }
+  },
   "networkPreference": "wifi",
   "cursorSettings": {
     "theme": "Bibata-Modern-Ice",
@@ -119,6 +128,7 @@
   "muxType": "zellij",
   "osdAlwaysShowValue": true,
   "osdPowerProfileEnabled": true,
+  "customPowerActionSuspend": "niri msg action power-off-monitors",
   "barConfigs": [
     {
       "id": "default",
