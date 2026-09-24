@@ -6,7 +6,6 @@
     ./hardware-configuration.nix
   ];
 
-
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -20,8 +19,15 @@
   environment.systemPackages = with pkgs; [
     lolcat
     wootility
+    openrgb
   ];
+  
   services.tailscale.enable = true;
+
+  
+  services.hardware.openrgb.enable = true;
+
+  boot.kernelModules = [ "i2c-dev" "i2c-piix4" ]; # or i2c-i801 depending
 
 
   programs.fish.shellAliases = {
