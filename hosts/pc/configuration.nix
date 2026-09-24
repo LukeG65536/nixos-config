@@ -19,9 +19,17 @@
 
   environment.systemPackages = with pkgs; [
     lolcat
+    wootility
   ];
+  services.tailscale.enable = true;
+
 
   programs.fish.shellAliases = {
     rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config/#laptop";
+  };
+  
+  programs.fish.shellAliases = {
+    re = "nh os switch --update -H pc";
+    gre = "cd ~/nixos-config; git add -A; git commit -m \"auto commit gen \"(sudo nix-env --list-generations --profile /nix/var/nix/profiles/system | tail -1 | awk '{print $1}'); git push; nh os switch -H pc"; 
   };
 }

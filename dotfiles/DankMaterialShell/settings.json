@@ -114,6 +114,7 @@
       "cursorHideTimeout": 0
     }
   },
+  "acMonitorTimeout": 300,
   "batteryAutoPowerSaver": true,
   "muxType": "zellij",
   "osdAlwaysShowValue": true,
@@ -128,13 +129,17 @@
         {
           "name": "eDP-1",
           "model": "0x0829"
+        },
+        {
+          "name": "HDMI-A-1",
+          "model": "M27Q"
         }
       ],
       "showOnLastDisplay": true,
       "leftWidgets": [
         {
           "id": "launcherButton",
-          "enabled": true,
+          "enabled": false,
           "launcherLogoMode": "custom",
           "launcherLogoCustomPath": "/home/duffy/Downloads/NixOS.png"
         },
@@ -196,10 +201,6 @@
         },
         {
           "id": "battery",
-          "enabled": true
-        },
-        {
-          "id": "dankAsusControlCenter",
           "enabled": true
         },
         {
@@ -304,7 +305,7 @@
       "islandCornerRadius": 34,
       "followInterfaceStyle": true,
       "attachToScreenEdge": false,
-      "widgetStyle": "segments",
+      "widgetStyle": "pills",
       "islandHomeStatusContent": "battery",
       "islandNotificationPopups": false
     },
@@ -315,7 +316,7 @@
       "position": 0,
       "screenPreferences": [
         {
-          "name": "HDMI-A-1",
+          "name": "DP-2",
           "model": "AG276QZD2"
         }
       ],
@@ -323,7 +324,7 @@
       "leftWidgets": [
         {
           "id": "launcherButton",
-          "enabled": true,
+          "enabled": false,
           "launcherLogoMode": "custom",
           "launcherLogoCustomPath": "/home/duffy/Downloads/NixOS.png"
         },
@@ -385,7 +386,7 @@
         },
         {
           "id": "battery",
-          "enabled": true
+          "enabled": false
         },
         {
           "id": "controlCenterButton",
@@ -393,14 +394,14 @@
           "showMicPercent": true
         }
       ],
-      "spacing": 0,
+      "spacing": 4,
       "innerPadding": 4,
       "bottomGap": 0,
       "transparency": 1,
       "widgetTransparency": 1,
-      "squareCorners": true,
+      "squareCorners": false,
       "noBackground": false,
-      "gothCornersEnabled": true,
+      "gothCornersEnabled": false,
       "gothCornerRadiusOverride": false,
       "gothCornerRadiusValue": 12,
       "borderEnabled": false,
@@ -484,7 +485,7 @@
       "followInterfaceStyle": true,
       "attachToScreenEdge": false,
       "barLengthMode": "full",
-      "widgetStyle": "segments"
+      "widgetStyle": "pills"
     }
   ],
   "desktopWidgetInstances": [
