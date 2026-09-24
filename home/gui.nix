@@ -31,8 +31,10 @@
     nautilus
     obsidian
     spotify
+    (darktable.overrideAttrs (oldAttrs: {
+      cmakeFlags = (oldAttrs.cmakeFlags or []) ++ [ "-DUSE_AI=OFF" ];
+    }))
     vesktop
-    darktable
     feh
     mpv
     wl-clipboard
