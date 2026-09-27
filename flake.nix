@@ -26,9 +26,14 @@
       url = "github:Yazelix/nova/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    antigravity-nix = {
+      url = "github:jacopone/antigravity-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, dankMaterialShell, zen-browser, nix-flatpak, yazelix, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, dankMaterialShell, zen-browser, nix-flatpak, yazelix, antigravity-nix, ... }@inputs: {
     nixosConfigurations = {
       pc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -37,8 +42,13 @@
           ./common.nix
           ./hosts/pc/configuration.nix
           nix-flatpak.nixosModules.nix-flatpak
-          home-manager.nixosModules.home-manager
+          home-manager.nixosModules.home-manager          
           {
+            home.packages = [
+              antigravity-nix.packages.x86_64-linux.default
+              antigravity-nix.packages.x86_64-linux.google-antigravity-ide
+              antigravity-nix.packages.x86_64-linux.google-antigravity-cli
+            ];
             home-manager.backupFileExtension = "backup";
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -54,9 +64,14 @@
         modules = [
           ./common.nix
           ./hosts/laptop/configuration.nix
-          nix-flatpak.nixosModules.nix-flatpak
+          nix-flatpak.nixosModules.nix-flatpak          
           home-manager.nixosModules.home-manager
           {
+            home.packages = [
+              antigravity-nix.packages.x86_64-linux.default
+              antigravity-nix.packages.x86_64-linux.google-antigravity-ide
+              antigravity-nix.packages.x86_64-linux.google-antigravity-cli
+            ];
             home-manager.backupFileExtension = "backup";
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -75,6 +90,11 @@
           nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager
           {
+            home.packages = [
+              antigravity-nix.packages.x86_64-linux.default
+              antigravity-nix.packages.x86_64-linux.google-antigravity-ide
+              antigravity-nix.packages.x86_64-linux.google-antigravity-cli
+            ];
             home-manager.backupFileExtension = "backup";
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
