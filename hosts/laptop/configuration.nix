@@ -7,6 +7,8 @@
   ];
 
 
+  networking.hostName = "laptop";
+
   services.udev.extraRules = ''
     SUBSYSTEM=="input", ATTRS{name}=="ELAN9008:00 04F3:2C8C", ENV{LIBINPUT_IGNORE_DEVICE}="1"
   '';
@@ -15,7 +17,6 @@
   environment.systemPackages = with pkgs; [
     lolcat
     kdePackages.filelight
-    wootility
     asusctl
     supergfxctl
   ];
@@ -25,11 +26,9 @@
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
   
-  services.flatpak.enable = true;
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
 
-  hardware.wooting.enable = true;
   hardware.opentabletdriver.enable = true;
   
 
@@ -120,10 +119,4 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-
-  programs.fish.shellAliases = {
-    re = "nh os switch --update -H laptop";
-    gre = "cd ~/nixos-config; git add -A; git commit -m \"auto commit gen \"(sudo nix-env --list-generations --profile /nix/var/nix/profiles/system | tail -1 | awk '{print $1}'); git push; nh os switch -H laptop"; 
-  };
 }

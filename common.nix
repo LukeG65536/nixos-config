@@ -3,8 +3,6 @@
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.hostName = "nixos";
-
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Denver";
@@ -85,6 +83,8 @@
   services.udisks2.enable = true;
   services.gvfs.enable = true;
   security.polkit.enable = true;
+  services.flatpak.enable = true;
+  hardware.wooting.enable = true;
 
 
 
