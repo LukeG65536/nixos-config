@@ -18,7 +18,6 @@
     vim
     fastfetch
     gh
-    yazi
     eza
     btop
     pyright
@@ -132,5 +131,12 @@
     options = [
       "--cmd cd" # Replaces the standard 'cd' command with zoxide
     ];
+  };
+
+  programs.yazi = {
+    enable = true;
+    enableFishIntegration = true;
+    enableBashIntegration = true;
+    shellWrapperName = "y";
   };
 }
