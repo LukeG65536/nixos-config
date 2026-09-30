@@ -47,6 +47,7 @@
     prusa-slicer
     vscode
     slack
+    gparted
   ];
 
   

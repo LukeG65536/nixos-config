@@ -87,6 +87,10 @@
   ],
   "currentThemeCategory": "custom",
   "floatingWindowSyncGlobal": false,
+  "dmsWindowsFloatingSeeded": [
+    "niri",
+    "niri"
+  ],
   "keyboardRepeatDelay": 250,
   "keyboardRepeatRate": 40,
   "springBounce": 0,
@@ -317,7 +321,8 @@
       "attachToScreenEdge": false,
       "widgetStyle": "pills",
       "islandHomeStatusContent": "battery",
-      "islandNotificationPopups": false
+      "islandNotificationPopups": false,
+      "widgetFollowInterfaceStyle": true
     },
     {
       "id": "bar1788835496702",
@@ -495,7 +500,8 @@
       "followInterfaceStyle": true,
       "attachToScreenEdge": false,
       "barLengthMode": "full",
-      "widgetStyle": "pills"
+      "widgetStyle": "pills",
+      "widgetFollowInterfaceStyle": true
     }
   ],
   "desktopWidgetInstances": [
@@ -536,5 +542,5 @@
   "frameRounding": 0,
   "frameBarSize": 36,
   "frameBarInsetPadding": 2,
-  "configVersion": 29
+  "configVersion": 34
 }
