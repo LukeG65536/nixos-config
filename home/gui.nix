@@ -49,6 +49,7 @@
     vscode
     slack
     gparted
+    kdePackages.partitionmanager
   ];
 
   
