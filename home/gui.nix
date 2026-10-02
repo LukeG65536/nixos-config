@@ -31,9 +31,10 @@
     nautilus
     obsidian
     spotify
-    (darktable.overrideAttrs (oldAttrs: {
-      cmakeFlags = (oldAttrs.cmakeFlags or []) ++ [ "-DUSE_AI=OFF" ];
-    }))
+    # (darktable.overrideAttrs (oldAttrs: {
+    #   cmakeFlags = (oldAttrs.cmakeFlags or []) ++ [ "-DUSE_AI=OFF" ];
+    # }))
+    darktable
     vesktop
     feh
     mpv
@@ -48,6 +49,7 @@
     vscode
     slack
     gparted
+    kdePackages.partitionmanager
   ];
 
   

@@ -36,6 +36,8 @@
 
 
   users.users.duffy.extraGroups = [ "video" "render" ];
+  security.polkit.enable = true;
+
 
   
   boot.kernelModules = [ "i2c-dev" "i2c-piix4" ]; # or i2c-i801 depending
