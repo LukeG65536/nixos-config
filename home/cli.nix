@@ -40,6 +40,7 @@
     xhost
     delta
     nix-output-monitor
+    xonsh
   ];
 
 
