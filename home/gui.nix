@@ -50,6 +50,7 @@
     slack
     gparted
     kdePackages.partitionmanager
+    codex
   ];
 
   

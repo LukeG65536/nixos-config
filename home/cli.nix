@@ -34,6 +34,7 @@
     dgop
     nvd
     gcc
+    cmake
     duf
     file
     bindfs
