@@ -23,6 +23,9 @@
   
   services.tailscale.enable = true;
 
+  virtualisation.docker.enable = true;
+
+
   
   services.hardware.openrgb.enable = true;
 
@@ -35,7 +38,7 @@
   };
 
 
-  users.users.duffy.extraGroups = [ "video" "render" ];
+  users.users.duffy.extraGroups = [ "video" "render" "docker" ];
   security.polkit.enable = true;
 
 
