@@ -178,7 +178,7 @@
       };
 
       gre = {
-        description = "Failproof rebuild, commit generation, and push to Git";
+        description = "Failproof rebuild, commit shared config generation, and push to Git";
         body = ''
           set -l config_dir "$HOME/nixos-config"
           if not test -d "$config_dir"
@@ -263,32 +263,13 @@
             return $switch_status
           end
 
-          set -l gen
-          if test -e /nix/var/nix/profiles/system
-            set gen (readlink /nix/var/nix/profiles/system | string match -r '[0-9]+')
-          end
-
-          if test -n "$gen"
-            echo (set_color green --bold)":: Switch succeeded! Activated generation: $gen"(set_color normal)
-          else
-            echo (set_color green --bold)":: Switch succeeded!"(set_color normal)
-          end
-
           set -l has_changes (git -C "$config_dir" status --porcelain)
           if test -n "$has_changes"
             set -l final_msg ""
             if test -n "$commit_msg"
-              if test -n "$gen"
-                set final_msg "$commit_msg (gen $gen)"
-              else
-                set final_msg "$commit_msg"
-              end
+              set final_msg "$commit_msg"
             else
-              if test -n "$gen"
-                set final_msg "auto commit gen $gen"
-              else
-                set final_msg "auto commit NixOS generation"
-              end
+              set final_msg "auto commit NixOS config generation"
             end
 
             echo (set_color cyan)":: Staging and committing changes: \"$final_msg\""(set_color normal)
@@ -297,7 +278,7 @@
             and begin
               echo (set_color cyan)":: Pushing to remote..."(set_color normal)
               git -C "$config_dir" push
-              and echo (set_color green --bold)":: Successfully pushed generation $gen to git!"(set_color normal)
+              and echo (set_color green --bold)":: Successfully pushed config generation to git!"(set_color normal)
             end
           else
             set -l still_unpushed (git -C "$config_dir" log @{u}..HEAD --oneline 2>/dev/null)
@@ -308,6 +289,13 @@
             else
               echo (set_color blue)":: No changes to commit or push."(set_color normal)
             end
+          end
+
+          set -l shared_gen (git -C "$config_dir" rev-list --count HEAD 2>/dev/null)
+          if test -n "$shared_gen"
+            echo (set_color green --bold)":: Switch succeeded! Shared config generation: $shared_gen"(set_color normal)
+          else
+            echo (set_color green --bold)":: Switch succeeded!"(set_color normal)
           end
         '';
       };
