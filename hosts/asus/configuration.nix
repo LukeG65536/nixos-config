@@ -7,7 +7,7 @@
   ];
 
 
-  networking.hostName = "laptop";
+  networking.hostName = "asus";
 
   services.udev.extraRules = ''
     SUBSYSTEM=="input", ATTRS{name}=="ELAN9008:00 04F3:2C8C", ENV{LIBINPUT_IGNORE_DEVICE}="1"

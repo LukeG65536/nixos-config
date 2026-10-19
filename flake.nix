@@ -62,12 +62,12 @@
         ];
       };
 
-      laptop = nixpkgs.lib.nixosSystem {
+      asus = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           ./common.nix
-          ./hosts/laptop/configuration.nix
+          ./hosts/asus/configuration.nix
           nix-flatpak.nixosModules.nix-flatpak          
 
           {

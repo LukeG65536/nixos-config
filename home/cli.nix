@@ -144,9 +144,12 @@
 
           set -l nh_args $argv
           if not contains -- -H $nh_args; and not contains -- --hostname $nh_args
-            if test (hostname) = "nixos"
+            set -l current_host (hostname)
+            if test "$current_host" = "laptop"
+              set -a nh_args -H asus
+            else if test "$current_host" = "nixos"
               if test -d /sys/class/power_supply/BAT0 -o -d /sys/class/power_supply/BAT1
-                set -a nh_args -H laptop
+                set -a nh_args -H asus
               else
                 set -a nh_args -H pc
               end
@@ -237,9 +240,12 @@
           end
 
           if not contains -- -H $nh_args; and not contains -- --hostname $nh_args
-            if test (hostname) = "nixos"
+            set -l current_host (hostname)
+            if test "$current_host" = "laptop"
+              set -a nh_args -H asus
+            else if test "$current_host" = "nixos"
               if test -d /sys/class/power_supply/BAT0 -o -d /sys/class/power_supply/BAT1
-                set -a nh_args -H laptop
+                set -a nh_args -H asus
               else
                 set -a nh_args -H pc
               end
