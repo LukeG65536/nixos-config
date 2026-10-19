@@ -22,6 +22,11 @@
       url = "github:gmodena/nix-flatpak";
     };
 
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     yazelix = {
       url = "github:Yazelix/nova/stable";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,7 +38,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, dankMaterialShell, zen-browser, nix-flatpak, yazelix, antigravity-nix, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, dankMaterialShell, zen-browser, nix-flatpak, nixos-hardware, yazelix, antigravity-nix, ... }@inputs: {
     nixosConfigurations = {
       pc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -78,6 +83,25 @@
             ];
           }
           
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.backupFileExtension = "backup";
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.duffy = ./home/default.nix;
+          }
+        ];
+      };
+
+      framework = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./common.nix
+          nixos-hardware.nixosModules.framework-intel-core-ultra-series3
+          ./hosts/framework/configuration.nix
+          nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager
           {
             home-manager.backupFileExtension = "backup";
