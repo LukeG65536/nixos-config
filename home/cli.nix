@@ -44,6 +44,7 @@
     nix-output-monitor
     xonsh
     stress-ng
+    cloudflare-speed-cli
   ];
 
 

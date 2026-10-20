@@ -721,5 +721,10 @@
   "blurBorderSeeded": true,
   "dmsWindowsFloatingSeeded": [
     "niri"
-  ]
+  ],
+  "batteryNotifyLow": false,
+  "batteryLowNotificationType": 1,
+  "batteryLowThreshold": 20,
+  "acProfileName": "",
+  "batteryProfileName": ""
 }
