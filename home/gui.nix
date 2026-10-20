@@ -18,6 +18,10 @@
   home.file.".config/niri".source =
     config.lib.file.mkOutOfStoreSymlink
       "${config.home.homeDirectory}/nixos-config/dotfiles/niri";  
+
+  home.file.".config/kitty".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/nixos-config/dotfiles/kitty";
   
   programs.home-manager.enable = true;
   
