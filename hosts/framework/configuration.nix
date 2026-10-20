@@ -7,18 +7,11 @@
   ];
 
 
-  networking.hostName = "laptop";
-
-  services.udev.extraRules = ''
-    SUBSYSTEM=="input", ATTRS{name}=="ELAN9008:00 04F3:2C8C", ENV{LIBINPUT_IGNORE_DEVICE}="1"
-  '';
-
+  networking.hostName = "framework";
   
   environment.systemPackages = with pkgs; [
     lolcat
     kdePackages.filelight
-    asusctl
-    supergfxctl
   ];
 
   programs.virt-manager.enable = true;
@@ -29,21 +22,14 @@
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
 
-  hardware.opentabletdriver.enable = true;
-  
 
   services.upower.enable = true;
 
-  services.asusd = {
-    enable = true;
-    # enableUserService = true; # Highly recommended for ROG Control Center features
-  };
-
-  services.supergfxd.enable = true;
-
-
-  hardware.nvidia.powerManagement.enable = true;
   services.power-profiles-daemon.enable = true;
+
+  hardware.framework.enableKmod = true;
+
+  zramSwap.enable = true;
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
@@ -61,11 +47,6 @@
     };
   };
 
-  services.logind.settings.Login = {
-    HandleLidSwitch = "ignore";
-    HandleLidSwitchExternalPower = "ignore";
-    HandleLidSwitchDocked = "ignore";
-  };
 
   environment.etc."libinput/local-overrides.quirks".text = ''
     [keyd virtual keyboard]
@@ -96,24 +77,6 @@
     enable = true;
     enable32Bit = true;
   };
-
-  services.xserver.videoDrivers = [ "nvidia" ];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = false; # Set to true if using open-source kernel modules on supported cards
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-
-  
-  zramSwap.enable = true;
-
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 16 * 1024;
-    }
-  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
