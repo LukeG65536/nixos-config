@@ -2,6 +2,15 @@
 
 {
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      khal = prev.khal.overrideAttrs (_: {
+        # Nixpkgs' Sphinx hook needs a single string with structured attrs.
+        sphinxBuilders = [ "html man" ];
+      });
+    })
+  ];
+
   imports = [
     ./hardware-configuration.nix
   ];
@@ -27,7 +36,9 @@
 
   services.power-profiles-daemon.enable = true;
 
-  hardware.framework.enableKmod = true;
+  # The current Nixpkgs framework-laptop-kmod package lacks a certificate
+  # expected by the kernel module aggregator with linuxPackages_latest.
+  hardware.framework.enableKmod = lib.mkForce false;
 
   zramSwap.enable = true;
 

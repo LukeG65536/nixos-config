@@ -262,7 +262,7 @@
       "maximizeDetection": true,
       "useOverlayLayer": false,
       "scrollEnabled": true,
-      "scrollXBehavior": "focusWindow",
+      "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
       "shadowIntensity": 0,
       "shadowOpacity": 60,
@@ -447,7 +447,7 @@
       "maximizeDetection": true,
       "useOverlayLayer": false,
       "scrollEnabled": true,
-      "scrollXBehavior": "focusWindow",
+      "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
       "hoverPopouts": false,
       "hoverPopoutDelay": 150,
@@ -470,6 +470,7 @@
       "islandSatellitePosition": "edges",
       "islandSatelliteGap": 12,
       "islandInteractionMode": "hybrid",
+      "islandReducedMotion": false,
       "islandHomeLayout": [
         {
           "id": "media",
@@ -623,7 +624,7 @@
       "maximizeDetection": true,
       "useOverlayLayer": false,
       "scrollEnabled": true,
-      "scrollXBehavior": "focusWindow",
+      "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
       "shadowIntensity": 0,
       "shadowOpacity": 60,
@@ -730,9 +731,5 @@
   "frameRounding": 0,
   "frameBarSize": 36,
   "frameBarInsetPadding": 2,
-<<<<<<< HEAD
   "configVersion": 38
-=======
-  "configVersion": 42
->>>>>>> 4e9fffb709883b7ac7f20423577b5a1dda240c63
 }
