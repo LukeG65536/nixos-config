@@ -18,9 +18,12 @@
   networking.hostName = "framework";
   
   environment.systemPackages = with pkgs; [
+    framework-tool
     lolcat
     kdePackages.filelight
   ];
+
+  services.framework-control.enable = true;
 
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = ["duffy"];
