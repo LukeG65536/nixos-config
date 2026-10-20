@@ -718,5 +718,8 @@
       ]
     }
   ],
-  "blurBorderSeeded": true
+  "blurBorderSeeded": true,
+  "dmsWindowsFloatingSeeded": [
+    "niri"
+  ]
 }
