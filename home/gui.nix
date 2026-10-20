@@ -111,6 +111,24 @@
     enable = true;
   };
 
+  systemd.user.services.dms = {
+    Unit = {
+      Description = "Dank Material Shell";
+      PartOf = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
+      Requisite = [ "graphical-session.target" ];
+    };
+    Service = {
+      Type = "dbus";
+      BusName = "org.freedesktop.Notifications";
+      ExecStart = "${config.programs.dank-material-shell.package}/bin/dms run --session";
+      ExecReload = "/bin/kill -USR1 $MAINPID";
+      Restart = "on-failure";
+      RestartSec = "1s";
+    };
+    Install.WantedBy = [ "graphical-session.target" ];
+  };
+
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;

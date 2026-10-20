@@ -15,8 +15,6 @@
     ./hardware-configuration.nix
   ];
 
-  programs.dms-shell.enable = true;
-
   networking.hostName = "framework";
   
   environment.systemPackages = with pkgs; [
