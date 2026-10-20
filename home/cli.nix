@@ -43,6 +43,7 @@
     delta
     nix-output-monitor
     xonsh
+    stress-ng
   ];
 
 
