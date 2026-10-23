@@ -240,7 +240,9 @@
       "widgetStyle": "pills",
       "islandHomeStatusContent": "battery",
       "islandNotificationPopups": false,
-      "widgetFollowInterfaceStyle": true
+      "widgetFollowInterfaceStyle": true,
+      "island": false,
+      "dot": false
     },
     {
       "id": "bar1788835496702",
@@ -726,5 +728,15 @@
   "batteryLowNotificationType": 1,
   "batteryLowThreshold": 20,
   "acProfileName": "",
-  "batteryProfileName": ""
+  "batteryProfileName": "",
+  "displayShowDisconnected": true,
+  "mouseAccelSpeed": 0,
+  "focusFollowsMouse": 0,
+  "mouseAccelProfile": "default",
+  "touchpadAccelSpeed": 0,
+  "touchpadAccelProfile": "default",
+  "touchpadClickMethod": "default",
+  "touchpadScrollMethod": "default",
+  "touchpadScrollFactor": 0.8,
+  "powerActionHoldDuration": 0.25
 }
