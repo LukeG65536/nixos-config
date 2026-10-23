@@ -45,6 +45,7 @@
     xonsh
     stress-ng
     cloudflare-speed-cli
+    pipes
   ];
 
 

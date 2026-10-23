@@ -71,7 +71,7 @@
       "leftWidgets": [
         {
           "id": "launcherButton",
-          "enabled": true,
+          "enabled": false,
           "launcherLogoMode": "custom",
           "launcherLogoCustomPath": "/home/duffy/Downloads/NixOS.png"
         },
@@ -84,8 +84,8 @@
         {
           "id": "focusedWindow",
           "enabled": true,
-          "focusedWindowSize": 0,
-          "focusedWindowCompactMode": true,
+          "focusedWindowSize": 2,
+          "focusedWindowCompactMode": false,
           "focusedWindowShowIcon": false
         }
       ],
@@ -727,8 +727,8 @@
   "batteryNotifyLow": false,
   "batteryLowNotificationType": 1,
   "batteryLowThreshold": 20,
-  "acProfileName": "",
-  "batteryProfileName": "",
+  "acProfileName": "2",
+  "batteryProfileName": "0",
   "displayShowDisconnected": true,
   "mouseAccelSpeed": 0,
   "focusFollowsMouse": 0,
@@ -738,5 +738,9 @@
   "touchpadClickMethod": "default",
   "touchpadScrollMethod": "default",
   "touchpadScrollFactor": 0.8,
-  "powerActionHoldDuration": 0.25
+  "powerActionHoldDuration": 0.25,
+  "updaterUpgradeInWindow": true,
+  "updaterUseCustomCommand": true,
+  "updaterCustomCommand": "kitty -c ure",
+  "updaterTerminalAdditionalParams": ""
 }
