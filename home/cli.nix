@@ -269,12 +269,13 @@
           end
 
           set -l has_changes (git -C "$config_dir" status --porcelain)
+          set -l shared_gen (git -C "$config_dir" rev-list --count HEAD 2>/dev/null)
           if test -n "$has_changes"
             set -l final_msg ""
             if test -n "$commit_msg"
               set final_msg "$commit_msg"
             else
-              set final_msg "auto commit NixOS config generation"
+              set final_msg "auto commit NixOS config generation $shared_gen"
             end
 
             echo (set_color cyan)":: Staging and committing changes: \"$final_msg\""(set_color normal)
@@ -296,7 +297,6 @@
             end
           end
 
-          set -l shared_gen (git -C "$config_dir" rev-list --count HEAD 2>/dev/null)
           if test -n "$shared_gen"
             echo (set_color green --bold)":: Switch succeeded! Shared config generation: $shared_gen"(set_color normal)
           else
