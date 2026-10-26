@@ -34,6 +34,7 @@
     dgop
     nvd
     gcc
+    gdb
     fd
     cmake
     duf
