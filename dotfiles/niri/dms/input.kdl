@@ -10,6 +10,7 @@ input {
     touchpad {
         tap
         accel-speed 0.0
+        click-method "clickfinger"
         natural-scroll
         dwt
         scroll-factor 0.8

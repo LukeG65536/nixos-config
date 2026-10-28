@@ -69,14 +69,6 @@
     pulse.enable = true;
   };
 
-  services.syncthing = {
-    enable = false;
-    openDefaultPorts = true; # Open ports in the firewall for Syncthing. (NOTE: this will not open syncthing gui port)
-    user = "duffy"; 
-    group = "users";
-    dataDir = "/home/duffy"; 
-    configDir = "/home/duffy/.config/syncthing";
-  };
 
   programs.steam = {
     enable = true;

@@ -735,7 +735,7 @@
   "mouseAccelProfile": "default",
   "touchpadAccelSpeed": 0,
   "touchpadAccelProfile": "default",
-  "touchpadClickMethod": "default",
+  "touchpadClickMethod": "clickfinger",
   "touchpadScrollMethod": "default",
   "touchpadScrollFactor": 0.8,
   "powerActionHoldDuration": 0.25,
