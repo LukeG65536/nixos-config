@@ -31,6 +31,7 @@
     unzip
     tree
     nushell
+    codex
     dgop
     nvd
     gcc
@@ -47,7 +48,7 @@
     stress-ng
     cloudflare-speed-cli
     pipes
-    codex
+    cbonsai
   ];
 
 
