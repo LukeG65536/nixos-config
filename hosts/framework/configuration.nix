@@ -19,6 +19,7 @@
   
   environment.systemPackages = with pkgs; [
     framework-tool
+    prismlauncher
     lolcat
     kdePackages.filelight
   ];
