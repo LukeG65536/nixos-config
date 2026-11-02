@@ -83,6 +83,8 @@
   };
 
   systemd.services."NetworkManager-wait-online".enable = false;
+
+  services.cloudflare-warp.enable = true;
   
   services.tailscale.enable = true;
   users.users.duffy.extraGroups = [ "docker" ];
