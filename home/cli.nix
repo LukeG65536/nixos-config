@@ -48,6 +48,7 @@
     nix-output-monitor
     xonsh
     stress-ng
+    cloudflare-warp
     cloudflare-speed-cli
     pipes
     cbonsai
