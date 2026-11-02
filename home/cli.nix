@@ -35,6 +35,7 @@
     dgop
     nvd
     gcc
+    gnumake
     gdb
     valgrind
     fd
