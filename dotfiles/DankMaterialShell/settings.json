@@ -100,11 +100,7 @@
           "enabled": true,
           "clockCompactMode": false
         },
-        "weather",
-        {
-          "id": "dankPomodoroTimer",
-          "enabled": true
-        }
+        "weather"
       ],
       "rightWidgets": [
         {
@@ -659,6 +655,7 @@
       "showOnLastDisplay": true,
       "position": 1,
       "mode": "compact",
+      "middleClickAction": "close",
       "taskbarAlign": "center",
       "widgetExpansion": "popout",
       "iconSize": 40,
@@ -742,5 +739,6 @@
   "updaterUpgradeInWindow": true,
   "updaterUseCustomCommand": true,
   "updaterCustomCommand": "kitty -c ure",
-  "updaterTerminalAdditionalParams": ""
+  "updaterTerminalAdditionalParams": "",
+  "iconThemeDark": "System Default"
 }
