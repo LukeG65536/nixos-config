@@ -54,6 +54,7 @@
     slack
     gparted
     kdePackages.partitionmanager
+    kdePackages.filelight
   ];
 
   
