@@ -85,8 +85,8 @@
           "id": "focusedWindow",
           "enabled": true,
           "focusedWindowSize": 2,
-          "focusedWindowCompactMode": false,
-          "focusedWindowShowIcon": false
+          "focusedWindowShowIcon": false,
+          "focusedWindowShowAppName": true
         }
       ],
       "centerWidgets": [
@@ -269,8 +269,8 @@
           "id": "focusedWindow",
           "enabled": true,
           "focusedWindowSize": 0,
-          "focusedWindowCompactMode": true,
-          "focusedWindowShowIcon": false
+          "focusedWindowShowIcon": false,
+          "focusedWindowShowAppName": false
         }
       ],
       "centerWidgets": [
@@ -444,8 +444,8 @@
           "id": "focusedWindow",
           "enabled": true,
           "focusedWindowSize": 0,
-          "focusedWindowCompactMode": true,
-          "focusedWindowShowIcon": false
+          "focusedWindowShowIcon": false,
+          "focusedWindowShowAppName": false
         }
       ],
       "centerWidgets": [
@@ -642,7 +642,7 @@
   "frameRounding": 0,
   "frameBarSize": 36,
   "frameBarInsetPadding": 2,
-  "configVersion": 42,
+  "configVersion": 43,
   "blurBorderEnabled": true,
   "dockConfigs": [
     {
@@ -740,5 +740,8 @@
   "updaterUseCustomCommand": true,
   "updaterCustomCommand": "kitty -c ure",
   "updaterTerminalAdditionalParams": "",
-  "iconThemeDark": "System Default"
+  "iconThemeDark": "System Default",
+  "matugenScheme": "scheme-content",
+  "matugenSpec": "2021",
+  "matugenSeedColor": ""
 }

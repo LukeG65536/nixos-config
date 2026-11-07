@@ -17,6 +17,7 @@
     git
     vim
     fastfetch
+    pywal
     gh
     eza
     btop
