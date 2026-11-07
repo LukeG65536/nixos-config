@@ -18,6 +18,7 @@
   networking.hostName = "framework";
   
   environment.systemPackages = with pkgs; [
+    fswebcam
     framework-tool
     prismlauncher
     lolcat
