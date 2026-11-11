@@ -32,7 +32,6 @@
     unzip
     tree
     nushell
-    codex
     dgop
     nvd
     gcc
@@ -55,6 +54,14 @@
     cbonsai
   ];
 
+
+
+  programs.codex = {
+    enable = true;
+    package = pkgs.codex.overrideAttrs (oldAttrs: {
+      dontCargoUseSystemLibs = true; 
+    });
+  };
 
   programs.nh = {
     enable = true;

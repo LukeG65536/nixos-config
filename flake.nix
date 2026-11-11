@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,6 +12,7 @@
     dankMaterialShell = {
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     zen-browser = {
@@ -38,7 +40,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, dankMaterialShell, zen-browser, nix-flatpak, nixos-hardware, yazelix, antigravity-nix, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, dankMaterialShell, zen-browser, nix-flatpak, nixos-hardware, yazelix, antigravity-nix, ... }@inputs: {
     nixosConfigurations = {
       pc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

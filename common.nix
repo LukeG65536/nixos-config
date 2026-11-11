@@ -1,14 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  nixpkgs.overlays = [
-    (final: prev: {
-      khal = prev.khal.overrideAttrs (_: {
-        # Nixpkgs' Sphinx hook needs a single string with structured attrs.
-        sphinxBuilders = [ "html man" ];
-      });
-    })
-  ];
+  # nixpkgs.overlays = [
+  #   (final: prev: {
+  #     khal = prev.khal.overrideAttrs (_: {
+  #       # Nixpkgs' Sphinx hook needs a single string with structured attrs.
+  #       sphinxBuilders = [ "html man" ];
+  #     });
+  #   })
+  # ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
