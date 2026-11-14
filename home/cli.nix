@@ -59,7 +59,7 @@
   programs.codex = {
     enable = true;
     package = pkgs.codex.overrideAttrs (oldAttrs: {
-      dontCargoUseSystemLibs = true; 
+      # dontCargoUseSystemLibs = true; 
     });
   };
 

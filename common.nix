@@ -61,6 +61,10 @@
     curl        
     icu         
     ncurses     
+    xorg.libxcb
+    stdenv.cc.cc
+    glib
+    libGL
   ];
 
   services.pipewire = {
