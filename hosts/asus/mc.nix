@@ -1,7 +1,6 @@
 { pkgs, lib, ... }:
 let
-  # Mod jars come from Modrinth. Get the URL and hash from each mod's "Versions" tab.
-  # Use lib.fakeHash first, build once, and Nix will print the real hash.
+  # Mod jars are pinned to Minecraft 1.21.4 compatible Modrinth releases.
   mod = name: url: hash: {
     name = "${name}.jar";
     path = pkgs.fetchurl { inherit url hash; };
@@ -40,9 +39,9 @@ in
       };
 
       symlinks.mods = pkgs.linkFarm "mods" [
-        (mod "fabric-api" "https://cdn.modrinth.com/data/.../fabric-api.jar" lib.fakeHash)
-        (mod "lithium"    "https://cdn.modrinth.com/data/.../lithium.jar"    lib.fakeHash)
-        (mod "ferritecore" "https://cdn.modrinth.com/data/.../ferritecore.jar" lib.fakeHash)
+        (mod "fabric-api" "https://cdn.modrinth.com/data/P7dR8mSH/versions/p96k10UR/fabric-api-0.119.4%2B1.21.4.jar" "sha512-FrZ59qQlSco7a8FH3nELLIui1eRmHtiN8ieCwFpKX2wRY9exOGdoftkazeD9/lpQN9BWYkMclGhltYOWKE5+5w==")
+        (mod "lithium" "https://cdn.modrinth.com/data/gvQqBUqZ/versions/u8pHPXJl/lithium-fabric-0.15.3%2Bmc1.21.4.jar" "sha512-uLVBwOloVxyJcocrNC40uSVzvJIQ1FXcE0lYnzCmepDZMNv9mbF2q5sRA1DOtT4REYN43BOjXoOpCQgmYnvawA==")
+        (mod "ferritecore" "https://cdn.modrinth.com/data/uXXizFIs/versions/7KqeXPRS/ferritecore-7.1.3-fabric.jar" "sha512-dEh9bvpulzkUZl0P3zZhVsR+JqDlKkkuxdW2jX6jMVNfostG65WohG47LwMYu8/f84hd8L/OG8g2lrIR2V6YYw==")
       ];
     };
   };
