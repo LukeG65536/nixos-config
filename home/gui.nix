@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -22,6 +22,15 @@
   home.file.".config/kitty".source =
     config.lib.file.mkOutOfStoreSymlink
       "${config.home.homeDirectory}/nixos-config/dotfiles/kitty";
+
+  # Remove the legacy profile link before Home Manager checks the new link
+  # forest. It was created by the DMS module in an older generation.
+  home.activation.removeLegacyDmsWantedLink = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
+    legacy_link="$HOME/.config/systemd/user/graphical-session.target.wants/dms.service"
+    if [ -L "$legacy_link" ] && [ "$(readlink "$legacy_link")" = "/etc/profiles/per-user/duffy/share/systemd/user/dms.service" ]; then
+      rm "$legacy_link"
+    fi
+  '';
   
   programs.home-manager.enable = true;
   
@@ -109,24 +118,6 @@
 
   programs.dank-material-shell = {
     enable = true;
-  };
-
-  systemd.user.services.dms = {
-    Unit = {
-      Description = "Dank Material Shell";
-      PartOf = [ "graphical-session.target" ];
-      After = [ "graphical-session.target" ];
-      Requisite = [ "graphical-session.target" ];
-    };
-    Service = {
-      Type = "dbus";
-      BusName = "org.freedesktop.Notifications";
-      ExecStart = "${config.programs.dank-material-shell.package}/bin/dms run --session";
-      ExecReload = "/bin/kill -USR1 $MAINPID";
-      Restart = "on-failure";
-      RestartSec = "1s";
-    };
-    Install.WantedBy = [ "graphical-session.target" ];
   };
 
   programs.zen-browser = {
