@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ inputs, pkgs, lib, ... }:
 let
   # Mod jars are pinned to Minecraft 1.21.4 compatible Modrinth releases.
   mod = name: url: hash: {
@@ -7,6 +7,10 @@ let
   };
 in
 {
+  imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
+
+  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
+
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [ "minecraft-server" ];
 
@@ -33,7 +37,6 @@ in
         view-distance = 16;
         simulation-distance = 8;
         white-list = false;
-        black-list = true;
         online-mode = true;
         motd = "spruce 3rd";
       };

@@ -4,7 +4,7 @@
 
   imports = [
     ./hardware-configuration.nix
-    # ./mc.nix
+    ./mc.nix
   ];
 
 
