@@ -84,7 +84,7 @@
         {
           "id": "focusedWindow",
           "enabled": true,
-          "focusedWindowSize": 2,
+          "focusedWindowSize": 0,
           "focusedWindowShowIcon": false,
           "focusedWindowShowAppName": true
         }
@@ -93,7 +93,9 @@
         {
           "id": "music",
           "enabled": true,
-          "mediaSize": 1
+          "mediaSize": 1,
+          "mediaStyle": "controls",
+          "mediaShowLyrics": false
         },
         {
           "id": "clock",
