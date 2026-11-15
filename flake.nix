@@ -29,6 +29,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-minecraft = {
+      url = "github:Infinidoge/nix-minecraft";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     yazelix = {
       url = "github:Yazelix/nova/stable";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -75,7 +80,10 @@
         modules = [
           ./common.nix
           ./hosts/asus/configuration.nix
+          ./hosts/asus/mc.nix
           nix-flatpak.nixosModules.nix-flatpak          
+          inputs.nix-minecraft.nixosModules.minecraft-servers
+          { nixpkgs.overlays = [ inputs.nix-minecraft.overlay ]; }
 
           {
             environment.systemPackages = [
