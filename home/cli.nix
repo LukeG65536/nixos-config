@@ -47,6 +47,7 @@
     delta
     nix-output-monitor
     xonsh
+    tmux
     stress-ng
     cloudflare-warp
     cloudflare-speed-cli
