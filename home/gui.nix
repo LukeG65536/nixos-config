@@ -118,6 +118,11 @@
 
   programs.dank-material-shell = {
     enable = true;
+    systemd = {
+      enable = true;
+      restartIfChanged = true;
+      target = "niri.service";
+    };
   };
 
   programs.zen-browser = {
