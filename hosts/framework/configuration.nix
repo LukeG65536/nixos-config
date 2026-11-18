@@ -23,6 +23,7 @@
     prismlauncher
     lolcat
     kdePackages.filelight
+    powertop
   ];
 
   services.framework-control.enable = true;
@@ -38,6 +39,7 @@
 
   services.upower.enable = true;
 
+  powerManagement.powertop.enable = true;
   services.power-profiles-daemon.enable = true;
 
   # The current Nixpkgs framework-laptop-kmod package lacks a certificate
