@@ -644,7 +644,7 @@
   "frameRounding": 0,
   "frameBarSize": 36,
   "frameBarInsetPadding": 2,
-  "configVersion": 44,
+  "configVersion": 45,
   "blurBorderEnabled": true,
   "dockConfigs": [
     {
@@ -671,10 +671,12 @@
       "smartAutoHide": false,
       "useOverlayLayer": false,
       "editOnRightClick": false,
+      "showEditWidgetsInContextMenu": true,
       "showOnFullscreen": false,
       "openOnOverview": false,
       "groupByApp": false,
       "separatePinnedAndRunningApps": false,
+      "showRunningApps": true,
       "restoreSpecialWorkspaceOnClick": false,
       "isolateDisplays": false,
       "indicatorStyle": "circle",
@@ -745,5 +747,6 @@
   "iconThemeDark": "System Default",
   "matugenScheme": "scheme-content",
   "matugenSpec": "2021",
-  "matugenSeedColor": ""
+  "matugenSeedColor": "",
+  "motionDuration": 0
 }
