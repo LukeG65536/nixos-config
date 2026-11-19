@@ -2,6 +2,10 @@
 
 {
 
+  home.file.".gitconfig".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/nixos-config/dotfiles/.gitconfig";
+
 
 
   # Let home-manager manage itself
