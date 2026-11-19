@@ -1,14 +1,6 @@
 { config, pkgs, inputs, ... }:
 
 {
-
-  home.file.".gitconfig".source =
-    config.lib.file.mkOutOfStoreSymlink
-      "${config.home.homeDirectory}/nixos-config/dotfiles/.gitconfig";
-
-
-
-  # Let home-manager manage itself
   programs.home-manager.enable = true;
 
 
@@ -18,7 +10,6 @@
 
   
   home.packages = with pkgs; [
-    git
     vim
     fastfetch
     pywal
@@ -60,6 +51,13 @@
   ];
 
 
+  programs.git = {
+    enable = true;
+    settings.user = {
+      name = "Your Name";
+      email = "youremail@example.com";
+    };
+  };
 
   programs.codex = {
     enable = true;
