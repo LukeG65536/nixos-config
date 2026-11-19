@@ -54,9 +54,10 @@
   programs.git = {
     enable = true;
     settings.user = {
-      name = "Your Name";
-      email = "youremail@example.com";
+      name = "LukeG65536";
+      email = "LukeG65536@users.noreply.github.com";
     };
+    settings.credential.helper = "!gh auth git-credential";
   };
 
   programs.codex = {
