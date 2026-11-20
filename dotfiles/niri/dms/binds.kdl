@@ -61,7 +61,6 @@ binds {
     Alt+XF86Launch1 { screenshot-window; }
     Mod+BracketLeft { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
-    Mod+C { center-column; }
     Mod+Ctrl+C { center-visible-columns; }
     Mod+Ctrl+End { move-column-to-last; }
     Mod+Ctrl+F { expand-column-to-available-width; }
@@ -121,6 +120,7 @@ binds {
     XF86Launch1 { screenshot; }
     Mod+Shift+E { quit; }
     Mod+B repeat=false { spawn "zen-beta"; }
+    Mod+C { spawn "code"; }
     Mod+E { spawn "nautilus"; }
     Mod+M { spawn "kitty" "dgop"; }
     Mod+O repeat=false { spawn "obsidian"; }
